@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+body {
+  background-color: rgb(236, 227, 227);
+  overflow-x: hidden;
+}
+
+h1 {
+  color: rgb(38, 178, 221);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 0.5px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+.main {
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainUser {
+  width: 100vw;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.mainUser table, tr, td, th {
+  border: 2px rgb(56, 56, 56) solid;
+}
+
+.headUser {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px rgb(101, 101, 101) dotted;
+}
+
+.headUser h1 {
+  text-align: center;
+  width: 80%;
+  padding: 7px 0;
+  margin: 0;
+  color: rgb(40, 40, 40);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.form h1 {
+  color: rgb(255, 61, 61);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-decoration: underline dotted red;
+}
+
+.form h5 {
+  margin-top: 0.6rem;
+}
+
+.form h5 a {
+  text-decoration: none;
+  color: rgb(255, 86, 86);
+}
+/* 
+input[type="text"] {
+  padding: 5px;
+  margin: 5px;
+}
+
+input[type="password"] {
+  padding: 5px;
+  margin: 5px;
+} */
+
+button[name="button-add"]:hover {
+  background-color: rgb(131, 209, 58);
+}
+
+button[name="button-delete"]:hover {
+  background-color: rgb(218, 90, 67);
+}
+
+button[name="button-clear"]:hover {
+  background-color: rgb(241, 48, 14);
+}
+
+.btnSubmit,
+.btnRegister,
+.btnLogout {
+  border: none;
+  width: 18rem;
+  height: 2.5rem;
+  margin: 0.5rem;
+  padding: 5px;
+  background-color: rgb(116, 230, 247);
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  transition: 500ms;
+  border-radius: 4px;
+}
+
+.btnSubmit:hover,
+.btnRegister:hover,
+.btnLogout:hover {
+  cursor: pointer;
+  background-color: rgb(255, 125, 113);
+}
+
+.btnLogout {
+  width: 5rem;
+}
+
+footer {
+  width: 100vw;
+  /* min-height: 5vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+footer a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: rgb(243, 87, 87);
+}
+
+.infoBox {
+  width: 17rem;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.btnFunc {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+.btnFunc:hover {
+  cursor: pointer;
+}
+
+.showBox {
+  outline: none;
+  border: none;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+}

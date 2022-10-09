@@ -1,0 +1,97 @@
+<%- include('partials/header') %>
+<div class="headUser">
+    <h1>
+        Welcome back <span style="color: rgb(255, 103, 103)"><%= user %></span>
+    </h1>
+    <form action="/user" method="post">
+        <button type="submit" name="button-logout" class="btnLogout">Logout</button>
+    </form>
+</div>
+<div class="mainUser">
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th><i class="fa-solid fa-gear"></i></th>
+    </tr>
+    <% for(var i=0;i < items.length;i++){ %>
+    <form action="/user" method="post">
+      <tr>
+        <td>
+            <input
+            readonly
+            type="text"
+            name="service"
+            class="showBox"
+            value=<%= items[i].Service %>
+            
+          />
+        </td>
+        <td>
+            <input
+            readonly
+            type="text"
+            name="username"
+            class="showBox"
+            value=<%= items[i].Username %>
+            
+          />
+        </td>
+        <td>
+            <input
+            readonly
+            type="text"
+            name="password"
+            class="showBox"
+            value=<%= items[i].Password %>
+          />
+        </td>
+        <th>
+          <button type="submit" name="button-delete" class="btnFunc">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </th>
+      </tr>
+    </form>
+    <% } %>
+    <form action="/user" method="post">
+      <tr>
+        <td>
+          <input
+            type="text"
+            name="service"
+            placeholder="service"
+            class="infoBox"
+            autocomplete="off"
+          />
+        </td>
+        <td>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            class="infoBox"
+            autocomplete="off"
+          />
+        </td>
+        <td>
+          <input
+            type="text"
+            name="password"
+            placeholder="password"
+            class="infoBox"
+            autocomplete="off"
+          />
+        </td>
+        <th>
+          <button type="submit" name="button-add" class="btnFunc">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </th>
+      </tr>
+    </form>
+  </table>
+</div>
+
+<%- include('partials/footer') %>
