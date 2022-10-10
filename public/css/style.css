@@ -2,6 +2,28 @@
   padding: 0;
   margin: 0;
   font-family: monospace;
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff6767;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 0, 0.73);
 }
 
 body {
@@ -44,7 +66,10 @@ td {
   padding-top: 10px;
 }
 
-.mainUser table, tr, td, th {
+.mainUser table,
+tr,
+td,
+th {
   border: 2px rgb(56, 56, 56) solid;
 }
 
@@ -104,6 +129,29 @@ button[name="button-add"]:hover {
 
 button[name="button-delete"]:hover {
   background-color: rgb(218, 90, 67);
+}
+
+div[name="reveal-btn"] {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+div[name="reveal-btn"]:hover {
+  background-color: rgb(122, 228, 65);
+  cursor: pointer;
+}
+
+.settings{
+  display: flex;
+  flex-direction: row;
+  border: none;
+  outline: none;
+  justify-content: space-between;
+  padding: 5px;
 }
 
 button[name="button-clear"]:hover {

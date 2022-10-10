@@ -154,12 +154,38 @@ app.post("/user", (req, res) => {
         });
     }
     else if (req.body['button-add'] == '') {
-        var t = [];
-        t.push({ Service: req.body.service, Username: req.body.username, Password: encrypt(req.body.password) });
-        User.findOneAndUpdate({ UserName: req.session.name }, { $push: { Data: t } }, { new: true }, (err, updatedData) => {
-            if (err) console.log(err);
-            // else console.log(updatedData);
-        });
+        if (req.body.service === '' || req.body.username === '' || req.body.password === '')
+            console.log('Invalid data entry!');
+        else {
+            var t = [];
+            t.push({ Service: req.body.service, Username: req.body.username, Password: encrypt(req.body.password) });
+            // console.log(t);
+            User.find({ UserName: req.session.name }, (err, data) => {
+                if (data) {
+                    var flag = true;
+                    if(data[0].Data){
+                        data[0].Data.forEach(element => {
+                            if(element.Service === t[0].Service && element.Username === t[0].Username)
+                                flag = false;
+                        });
+                    }
+                    if(flag === true){
+                        User.findOneAndUpdate({ UserName: req.session.name }, { $push: { Data: t } }, { new: true }, (err, updatedData) => {
+                            if (err) console.log(err);
+                            // else console.log(updatedData);
+                        });
+                    }
+                    else{
+                        console.log('Duplicate Data found!');
+                    }
+                }
+                else {
+                    console.log('No user found');
+                }
+            });
+
+        }
+
     }
     else if (req.body['button-logout'] == '') {
         req.session.name = null;

@@ -41,16 +41,20 @@
         <td>
             <input
             readonly
-            type="text"
+            type="password"
             name="password"
             class="showBox"
+            id="passwordBox<%= i %>"
             value=<%= items[i].Password %>
           />
         </td>
-        <th>
+        <th class="settings">
           <button type="submit" name="button-delete" class="btnFunc">
             <i class="fa-solid fa-trash"></i>
           </button>
+          <div name="reveal-btn" onclick="reveal('passwordBox<%= i %>')">
+            <i id="eyepasswordBox<%= i %>" class="fa-solid fa-eye"></i>
+          </div>
         </th>
       </tr>
     </form>
